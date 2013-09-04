@@ -1,0 +1,353 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/tidnotifc/!svn/ver/980/branches/CodeCleaning/tidnotifc/source
+END
+SupplierAdminImpl.C
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/SupplierAdminImpl.C
+END
+NotifReference.C
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/NotifReference.C
+END
+PersistenceDB.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/PersistenceDB.h
+END
+MappingFilterData.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/MappingFilterData.h
+END
+ServiceAdminImpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/ServiceAdminImpl.h
+END
+ConsumerAdminData.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/ConsumerAdminData.h
+END
+EventChannelData.C
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/EventChannelData.C
+END
+FilterFactoryImpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/FilterFactoryImpl.h
+END
+ProxyPushSupplierData.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/ProxyPushSupplierData.h
+END
+SupplierAdminData.C
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/SupplierAdminData.C
+END
+NotificationService.C
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/NotificationService.C
+END
+ThePOAFactory.C
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/ThePOAFactory.C
+END
+FilterImpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/FilterImpl.h
+END
+AlreadyInitialized.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/AlreadyInitialized.h
+END
+PersistenceManager.C
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/PersistenceManager.C
+END
+tidnotif.C
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/tidnotif.C
+END
+MappingFilterImpl.C
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/MappingFilterImpl.C
+END
+EventChannelFactoryImpl.C
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/EventChannelFactoryImpl.C
+END
+start_notif.sh
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/tidnotifc/!svn/ver/900/branches/CodeCleaning/tidnotifc/source/start_notif.sh
+END
+ProxyPushConsumerImpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/ProxyPushConsumerImpl.h
+END
+FilterData.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/FilterData.h
+END
+FilterAdminImpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/FilterAdminImpl.h
+END
+ConsumerAdminImpl.C
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/ConsumerAdminImpl.C
+END
+CommonData.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/CommonData.h
+END
+ProxyPushSupplierImpl.C
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/ProxyPushSupplierImpl.C
+END
+PersistenceDB.C
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/PersistenceDB.C
+END
+MappingFilterData.C
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/MappingFilterData.C
+END
+ServiceAdminImpl.C
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/ServiceAdminImpl.C
+END
+NotInitialized.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/NotInitialized.h
+END
+ProxyPushConsumerData.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/ProxyPushConsumerData.h
+END
+ConsumerAdminData.C
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/ConsumerAdminData.C
+END
+ProxyPushSupplierData.C
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/ProxyPushSupplierData.C
+END
+FilterFactoryImpl.C
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/FilterFactoryImpl.C
+END
+EventChannelImpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/EventChannelImpl.h
+END
+NotifReference.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/NotifReference.h
+END
+SupplierAdminImpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/SupplierAdminImpl.h
+END
+start_notif_ssl.sh
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/start_notif_ssl.sh
+END
+AlreadyInitialized.C
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/AlreadyInitialized.C
+END
+FilterImpl.C
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/FilterImpl.C
+END
+EventChannelData.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/EventChannelData.h
+END
+SupplierAdminData.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/SupplierAdminData.h
+END
+NotificationService.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/NotificationService.h
+END
+ThePOAFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/ThePOAFactory.h
+END
+ProxyPushConsumerImpl.C
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/ProxyPushConsumerImpl.C
+END
+FilterData.C
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/FilterData.C
+END
+FilterAdminImpl.C
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/FilterAdminImpl.C
+END
+CommonData.C
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/CommonData.C
+END
+notifd.C
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/notifd.C
+END
+PersistenceManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/PersistenceManager.h
+END
+TIDNotif.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/TIDNotif.h
+END
+NotInitialized.C
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/tidnotifc/!svn/ver/980/branches/CodeCleaning/tidnotifc/source/NotInitialized.C
+END
+ProxyPushConsumerData.C
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/ProxyPushConsumerData.C
+END
+MappingFilterImpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/MappingFilterImpl.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/Makefile.am
+END
+EventChannelFactoryImpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/EventChannelFactoryImpl.h
+END
+ConsumerAdminImpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/ConsumerAdminImpl.h
+END
+ProxyPushSupplierImpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/ProxyPushSupplierImpl.h
+END
+EventChannelImpl.C
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/EventChannelImpl.C
+END

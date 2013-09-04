@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/file
+END
+FILEPersistenceDB.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/file/FILEPersistenceDB.h
+END
+FileUID.C
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/file/FileUID.C
+END
+FileUID.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/file/FileUID.h
+END
+IOException.C
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/file/IOException.C
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/file/Makefile.am
+END
+FILEPersistenceDB.C
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/file/FILEPersistenceDB.C
+END
+IOException.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/file/IOException.h
+END

@@ -1,0 +1,103 @@
+2009-11-16 Alvaro Vega Garcia <avega@tid.es>
+
+	* TIDNotifC version 2.1.0 released
+
+	* Completed Task [#783] Adapt TIDNotifC for use with SSLIOP
+	* Feature [#1083] Allow system assigned ports
+
+2009-02-19 Alvaro Vega Garcia <avega@tid.es>
+
+	* TIDNotifC version 2.0.0 released
+	
+	* Completed Task [#406]	Change object model: 
+	  - Default Servants for Channels, Admins and Proxys
+	  - Configurable POA and POAManager for Channels, Admins and Proxys: 
+	  global and local scopes 
+	* Completed Task [#305] Increase trace messages
+	* Completed Task [#217] Reduce use of STL string
+	
+2008-10-31 Alvaro Vega Garcia <avega@tid.es>
+	
+	* TIDNotifC version 1.0.8 released
+	* Fix bug [#828] Incorrect Filter::match behaviour: only takes account 
+	the first filter
+	* Fix bug [#826] Inconsistent type returned by MyType in Proxys before 
+	to be connected
+	* Fix bug [#825] ConsumerAdmin & SupplierAdmiin MyChannel() doesn't work 
+	properly
+	* Fix bug [#824] disconnect_push_consumer doesn't disconnect 
+	ProxyPushConsumerImpl in fact
+	* Fix bug [#822] Incorrect behavior of FilterAdmin::remove_all_filters()
+	must not destroy filters
+	* Fix bug [#821] set_qos doesn't overwrite default (previous) 
+	qos_policies
+        * Fix bug [#820] memory problems with validate_qos() ops
+	* Fix bug [#819] Infinite loop obtaining EventReliabilityRange
+	* Fix bug [#816] Exception expected in invocation of the method 
+	push_structured_event
+	* Task [#218] Removed unnecessary _var templates in declarations
+	* Fix bug [#812] BAD_PARAM exception after insert a bad constraint in a 
+	Filter
+	* Fix bug [#811] CORE dump after filter::match invocation with an any 
+	event
+	* Fix bug [#810] Core dump: create_mapping_filter without persistence
+
+
+2008-06-19 Alvaro Vega Garcia <avega@tid.es>
+
+	* TIDNotifC version 1.0.7 released
+	* Fix bug [#501] TRANSIENT recovering ProxyPushSupplier
+	
+2008-06-16 Alvaro Vega Garcia <avega@tid.es>
+
+	* TIDNotifC version 1.0.6 released
+	* Fix bug [#447] CORBA::INTERNAL trying to recover connection to channel
+	with persistent references
+	
+2008-05-30 Alvaro Vega Garcia <avega@tid.es>
+
+	* TIDNotifC version 1.0.5 released
+	* Fix bug [#438] Crash recovering persistence data of a Filter
+
+2008-05-26 Alvaro Vega Garcia <avega@tid.es>
+
+	* TIDNotifC version 1.0.4 released
+	* Fix bug [#437] Notification Service doesn't restart in some 
+	circustances
+	* Task [#216] Register errors at persistence methods
+	
+2008-02-04 Alvaro Polo Valdenebro <apv@tid.es>
+
+	* TIDNotifC version 1.0.3 released
+	* Fix enhancement [#390] compilation support for Solaris 8
+	* Some calls to GNU APIs substituted with POSIX-compliant calls
+	Built with TIDIdlc 1.3.5
+
+2007-12-17 Alvaro Vega Garcia  <avega@tid.es>
+
+	* TIDNotifC version 1.0.2 released.
+	* Fix bug [#376] create_filter crash notification service when is 
+	launched without persistence
+	* Fix bug [#347] Invalid cast with GCC 4.1 under amd64 (loses 
+	precision)
+	* Fix bug [#375] TIDNotif doesn't start with agument 
+	TIDNotif.persistence.db none
+	* Fix bug [#357] Unable to connect NotificationSevice through a 
+	corbaloc
+
+2007-10-30 Alvaro Vega Garcia  <avega@tid.es>
+
+	* TIDNotifC version 1.0.1 released.
+	Rebuilt with TIDIdlc 1.3.X
+	
+2006-04-26 Alvaro Vega Garcia  <avega@tid.es>
+
+	* TIDNotifC version 1.0.0 released.
+	Built with TIDIdlc 1.2.X
+
+
+
+
+	
+
+

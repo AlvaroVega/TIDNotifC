@@ -1,0 +1,86 @@
+.SUFFIXES: .idl _idl_src.lst _idl_obj.lst $(SUFFIXES)
+
+include ../../source/MakeVars
+
+IDL_FILES=Event.idl
+
+IDL_INCLUDE=idl_include
+IDL_SOURCE=idl_source
+
+IDL_SRC_FILES=$(IDL_FILES:.idl=_idl_src.lst)
+IDL_OBJ_FILES=$(IDL_FILES:.idl=_idl_obj.lst)
+IDL_GENERATED=$(IDL_INCLUDE) $(IDL_SOURCE) $(IDL_SRC_FILES) $(IDL_OBJ_FILES)
+IDL_LIBNAME=libIdl.so
+IDL_LIB=-lIdl
+
+OBJECTS=MyConsumerImpl.o MySupplierImpl.o 
+BINARIES=server supplier consumer1 consumer2
+
+LIBNAMES=$(IDL_LIBNAME)
+LIBS=$(IDL_LIB)
+
+CPPFLAGS=-I. -I$(IDL_INCLUDE) -I$(TIDORBC_HOME)/include_$(TARGET) -I$(TIDNOTIFC_HOME)/include \
+	-D_TIDORB
+LDFLAGS+= -L$(TIDNOTIFC_HOME)/lib
+LDLIBS+=$(LIBS) -lTIDNotif -lTIDNotifIdl
+
+IDL2CXX_FLAGS+= -I$(TIDNOTIFC_HOME)/IDL
+
+
+# PURIFY_PLUS_USER=rational
+# PURIFY_LD=$(PURIFY) $(LD)
+
+# QUANTIFY=/net/totemapp/APLICACIONES/PURESOFT/releases/quantify.sol.2003a.06.13/quantify -max_threads=100 -windows=no
+# QUANTIFY_LD=$(QUANTIFY) -windows=no $(LD) 
+
+
+all: $(BINARIES)
+
+build: clean all
+
+idl: $(IDL_LIBNAME)
+
+purify:
+	@chmod -R "g+w" .
+	@su $(PURIFY_PLUS_USER) -c 'export LD_LIBRARY_PATH="$(LD_LIBRARY_PATH)" && umask 002 && $(MAKE) all LD="$(PURIFY_LD)"'
+
+quantify:
+	@chmod -R "g+w" .
+	@su $(PURIFY_PLUS_USER) -c 'export LD_LIBRARY_PATH="$(LD_LIBRARY_PATH)" && umask 002 && $(MAKE) all LD="$(QUANTIFY_LD)"'
+
+clean:
+	rm -rf *.o ior.dat $(BINARIES) $(LIBNAMES) $(IDL_GENERATED)
+
+consumer1: $(LIBNAMES) consumer1.o $(OBJECTS)
+	$(LD) $(LDFLAGS) -o consumer1 consumer1.o $(OBJECTS) $(LDLIBS)	
+
+consumer2: $(LIBNAMES) consumer2.o $(OBJECTS)
+	$(LD) $(LDFLAGS) -o consumer2 consumer2.o $(OBJECTS) $(LDLIBS)	
+
+supplier: $(LIBNAMES) supplier.o $(OBJECTS)
+	$(LD) $(LDFLAGS) -o supplier supplier.o $(OBJECTS) $(LDLIBS)	
+
+server: $(LIBNAMES) server.o $(OBJECTS)
+	$(LD) $(LDFLAGS) -o server server.o $(OBJECTS) $(LDLIBS)	
+
+$(IDL_LIBNAME): $(IDL_SRC_FILES) $(IDL_OBJ_FILES)
+	@objects=`cat $(IDL_OBJ_FILES)`; \
+	 cmd="$(AR) -L$(TIDNOTIF_HOME)/lib $(ARFLAGS) $@ $$objects"; \
+	 echo $$cmd; $$cmd
+
+.idl_idl_src.lst:
+	@inc=$(IDL_INCLUDE); \
+	 src=$(IDL_SOURCE)/$*_idl; \
+	 mkdir -p $$inc $$src; \
+	 cmd="$(IDL2CXX) $(IDL2CXX_FLAGS) -output_h $$inc -output $$src $<"; \
+	 echo $$cmd; $$cmd; \
+	 find $$src -name "*.C" > $@
+
+_idl_src.lst_idl_obj.lst:
+	@objects=`sed 's/.C$$/.o/g' $<`; \
+	 $(MAKE) $$objects; \
+	 for obj in $$objects; do echo $$obj >> $@; done
+
+.cc.o .C.o:
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -o $@ -c $<
+

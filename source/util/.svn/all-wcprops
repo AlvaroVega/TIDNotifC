@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/tidnotifc/!svn/ver/980/branches/CodeCleaning/tidnotifc/source/util
+END
+TIDPropValue.C
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/util/TIDPropValue.C
+END
+TIDNotifUtil.C
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/util/TIDNotifUtil.C
+END
+TIDPropValue.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/util/TIDPropValue.h
+END
+TIDNotifUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/util/TIDNotifUtil.h
+END
+TIDConfig.C
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/util/TIDConfig.C
+END
+TIDNotifConfig.C
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/util/TIDNotifConfig.C
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/util/Makefile.am
+END
+TIDConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/util/TIDConfig.h
+END
+TIDNotifConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/util/TIDNotifConfig.h
+END
+SynSortedMap.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/tidnotifc/!svn/ver/902/branches/CodeCleaning/tidnotifc/source/util/SynSortedMap.h
+END

@@ -1,0 +1,66 @@
+IDL_FILES=Event.idl
+
+IDL_SRC_FILES=EventC.h EventC.cpp EventC.inl EventS.h EventS.cpp EventS.inl 
+IDL_OBJ_FILES=EventC.o EventS.o 
+IDL_GENERATED=$(IDL_SOURCE) $(IDL_SRC_FILES) $(IDL_OBJ_FILES)
+
+IDL_LIBNAME=libIdl.so
+IDL_LIB=-lIdl
+
+IDL2CXX=tao_idl
+IDL2CXX_FLAGS=-Wb,pre_include=ace/pre.h -Wb,post_include=ace/post.h -I$(TAO_ROOT) \
+	-I$(TAO_ROOT)/orbsvcs/orbsvcs -Sc -H dynamic_hash 
+
+OBJECTS=MySupplierImpl.o MyConsumerImpl.o MyConsumerImpl2.o 
+BINARIES=supplier server consumer1 consumer2
+
+LIBNAMES=$(IDL_LIBNAME)
+LIBS=$(IDL_LIB)
+
+#CXX=g++
+CXX=g++-3.4
+#CXXFLAGS=-g -mcpu=v8 -mtune=supersparc -m32 -pthreads -O2 -Wall -D_REENTRANT -D_GNU_SOURCE -D_TAO
+CXXFLAGS=-g -O2 -Wall -D_REENTRANT -D_GNU_SOURCE -D_TAO
+
+CPP=$(CXX) -P
+CPPFLAGS=-I. -I$(ACE_ROOT) -I$(ACE_ROOT)/include -I$(TAO_ROOT) -I$(TAO_ROOT)/orbsvcs/orbsvcs -I$(TAO_ROOT)/orbsvcs
+
+LD=$(CXX)
+#LDFLAGS=-g -mcpu=v8 -mtune=supersparc -m32 -pthreads -L. -L$(ACE_ROOT)/lib 
+LDFLAGS=-g -L. -L$(ACE_ROOT)/lib 
+LDLIBS=$(LIBS) -lACE -lTAO -lTAO_PortableServer -lTAO_CosEvent -lTAO_CosNotification \
+	-lTAO_CosNotification_Serv -lTAO_CosNotification_Skel -ldl -lm -lpthread -lrt
+
+AR=$(CXX)
+#ARFLAGS=-m32 -pthreads -L. -L$(ACE_ROOT)/lib  -shared -o
+ARFLAGS= -L. -L$(ACE_ROOT)/lib  -shared -o
+
+all: $(IDL_LIBNAME) server supplier consumer1 consumer2
+
+build: clean all
+
+clean:
+	rm -rf *.o ior.dat $(BINARIES) $(LIBNAMES) $(IDL_GENERATED)
+
+consumer1: $(LIBNAMES) consumer1.o  MyConsumerImpl.o 
+	$(LD) $(LDFLAGS) -o consumer1 consumer1.o MyConsumerImpl.o  $(LDLIBS)	
+
+consumer2: $(LIBNAMES) consumer2.o  MyConsumerImpl2.o 
+	$(LD) $(LDFLAGS) -o consumer2 consumer2.o  MyConsumerImpl2.o $(LDLIBS)	
+
+server: server.o $(OBJECTS)
+	$(LD) $(LDFLAGS) -o server server.o $(OBJECTS) $(LDLIBS)
+
+supplier: supplier.o $(OBJECTS)
+	$(LD) $(LDFLAGS) -o supplier supplier.o $(OBJECTS) $(LDLIBS)
+
+$(IDL_SRC_FILES):
+	$(IDL2CXX) $(IDL2CXX_FLAGS) $(IDL_FILES)
+
+$(IDL_LIBNAME): $(IDL_SRC_FILES) 
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -o EventC.o -c EventC.cpp
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -o EventS.o -c EventS.cpp
+	$(AR) $(ARFLAGS) $@ $(IDL_OBJ_FILES) -lACE -lTAO -lTAO_PortableServer -lTAO_CosEvent -lTAO_CosNotification -ldl -lm -lpthread -lrt
+
+.cpp.o .cc.o .C.o:
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -o $@ -c $<

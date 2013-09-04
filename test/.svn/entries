@@ -1,0 +1,89 @@
+10
+
+dir
+983
+https://svn.forge.morfeo-project.org/svn/tidnotifc/branches/CodeCleaning/tidnotifc/test
+https://svn.forge.morfeo-project.org/svn/tidnotifc
+
+
+
+2010-04-22T10:57:14.551081Z
+971
+avega
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+285b6b84-cd33-0410-aa0c-e5ffbc822877
+
+event_push
+dir
+
+notif_filter
+dir
+
+persistence
+dir
+
+filter
+dir
+
+grammar
+dir
+
+notif_naming
+dir
+
+Makefile.am
+file
+
+
+
+
+2010-04-21T14:34:32.000000Z
+a0e4f5765ddec8462d95653daf439050
+2008-06-19T05:17:53.728916Z
+811
+avega
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+107
+
+notif_rir
+dir
+
+notif_indra
+dir
+
+notif_push
+dir
+

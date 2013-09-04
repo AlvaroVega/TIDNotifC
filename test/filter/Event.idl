@@ -1,0 +1,11 @@
+module Events {
+
+
+  struct Test_Event 
+  {
+    long campo_uno;
+    long campo_dos;
+    long campo_tres;
+  };
+
+};

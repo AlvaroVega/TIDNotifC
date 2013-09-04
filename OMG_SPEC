@@ -1,0 +1,907 @@
+This release of TIDNotifC++ follows
+- OMG Notification Service Specification, Version 1.1
+
+TIDNotifC++ implements only "PUSH" model. 
+Supports anys and structured events.
+Allows persistence in files.
+Allows different scalable configurations, relaying on TIDorbC POAManagers.
+Allows the following QoS properties at Channels, Admins and StructuredEvents:
+ - QueueOrder { Any Fifo Priority Deadline }
+ - StartTime and StartTimeSupported
+ - StopTime and StopTimeSupported
+ - Timeout
+ - EventReliability BestEffort
+ - ConnectionReliability { BestEffort, Persistent }
+Allows event filering 
+
+-------------------------------------------------------------------------------
+The following Test Report represents the CORBA compliant:
+
+
+#################
+# Tests Summary #
+#################
+
+
+·Structural Tests
+=================
+
+
+Test Case COS_Notification
+--------------------------
+
+Istring                                                         [OK]
+
+PropertyName                                                    [OK]
+
+PropertyValue                                                   [OK]
+
+Property                                                        [OK]
+      PropertyName name                                         [OK]
+      PropertyValue value                                       [OK]
+
+PropertySeq                                                     [OK]
+
+OptionalHeaderFields                                            [OK]
+
+FilterableEventBody                                             [OK]
+
+QoSProperties                                                   [OK]
+
+AdminProperties                                                 [OK]
+
+_EventType                                                      [OK]
+      string domain_name                                        [OK]
+      string type_name                                          [OK]
+
+EventTypeSeq                                                    [OK]
+
+PropertyRange                                                   [OK]
+      PropertyValue low_val                                     [OK]
+      PropertyValue high_val                                    [OK]
+
+NamedPropertyRange                                              [OK]
+      PropertyName name                                         [OK]
+      PropertyRange range                                       [OK]
+
+NamedPropertyRangeSeq                                           [OK]
+
+QoSError_code 
+      UNSUPPORTED_PROPERTY                                      [OK]
+      UNAVAILABLE_PROPERTY                                      [OK]
+      UNSUPPORTED_VALUE                                         [OK]
+      UNAVAILABLE_VALUE                                         [OK]
+      BAD_PROPERTY                                              [OK]
+      BAD_TYPE                                                  [OK]
+      BAD_VALUE                                                 [OK]
+
+PropertyError                                                   [OK]
+      QoSError_code code                                        [OK]
+      PropertyName name                                         [OK]
+      PropertyRange available_range                             [OK]
+
+PropertyErrorSeq                                                [OK]
+
+
+UnsupportedQoS                                                  [OK]
+      PropertyErrorSeq qos_err                                  [OK]
+
+UnsupportedAdmin                                                [OK]
+      PropertyErrorSeq admin_err                                [OK]
+
+FixedEventHeader                                                [OK]
+      _EventType event_type                                     [OK]
+      string event_name                                         [OK]
+
+EventHeader                                                     [OK]
+      FixedEventHeader fixed_header                             [OK]
+      OptionalHeaderFields variable_header                      [OK]
+
+StructuredEvent                                                 [OK]
+      EventHeader header                                        [OK]
+      FilterableEventBody filterable_data                       [OK]
+      any remainder_of_body                                     [OK]
+
+EventBatch                                                      [OK]
+
+EventReliability                                                [OK]
+
+BestEffort                                                      [OK]
+
+Persistent                                                      [OK]
+
+ConnectionReliability                                           [OK]
+
+Priority                                                        [OK]
+
+LowestPriority                                                  [OK]
+
+HighestPriority                                                 [OK]
+
+DefaultPriority                                                 [OK]
+
+StartTime                                                       [OK]
+
+StopTime                                                        [OK]
+
+Timeout                                                         [OK]
+
+OrderPolicy                                                     [OK]
+
+AnyOrder                                                        [OK]
+
+FifoOrder                                                       [OK]
+
+PriorityOrder                                                   [OK]
+
+DeadlineOrder                                                   [OK]
+
+DiscardPolicy                                                   [OK]
+
+LifoOrder                                                       [OK]
+
+MaximumBatchSize                                                [OK]
+
+PacingInterval                                                  [OK]
+
+StartTimeSupported                                              [OK]
+
+StopTimeSupported                                               [OK]
+
+MaxEventsPerConsumer                                            [OK]
+
+MaxQueueLength                                                  [OK]
+
+MaxConsumers                                                    [OK]
+
+MaxSuppliers                                                    [OK]
+
+RejectNewEvents                                                 [OK]
+
+
+
+QoSAdmin                                                        [OK]
+
+      QoSProperties get_qos()                                   [OK]
+
+      void set_qos ( in QoSProperties qos)                      [OK]
+
+      void validate_qos ( )                                     [OK]
+
+
+AdminPropertiesAdmin                                            [OK]
+
+      AdminProperties get_admin()                               [OK]
+
+      void set_qos ( in AdminProperties admin)                  [OK]
+
+
+
+
+
+Test Case COS_NotifyChannelAdmin
+---------------------------------
+
+
+ProxyConsumer                                                   [OK]
+
+      obtain_subscription_types (in ObtainInfoMode mode )       [OK]
+
+      void validate_event_qos ( )                               [OK]
+
+
+ProxySupplier                                                   [OK]
+
+      obtain_offered_types (in ObtainInfoMode mode )            [OK]
+
+      void validate_event_qos ( )                               [OK]
+
+
+ProxyPushConsumer                                               [OK]
+
+      void connect_any_push_supplier ( )                        [OK]
+
+
+ProxyPushSupplier                                               [OK]
+
+      void connect_any_push_consumer ( )                        [OK]
+      void suspend_connection()                                 [OK]
+      void resume_connection()                                  [OK]
+
+
+ProxyPullConsumer                                               [OK]
+
+
+ProxyPullSupplier                                               [OK]
+
+
+
+StructuredProxyPushConsumer                                     [OK]
+                                                                
+      void connect_structured_push_supplier ( )                 [OK]
+
+
+StructuredProxyPushSupplier                                     [OK]
+
+      void connect_structured_push_consumer ( )                 [OK]
+
+
+StructuredProxyPullConsumer                                     [OK]
+
+
+
+StructuredProxyPullSupplier                                     [OK]
+
+
+
+SequenceProxyPushConsumer                                       [OK]
+
+
+
+SequenceProxyPushSupplier                                       [OK]
+
+
+
+SequenceProxyPullConsumer                                       [OK]
+
+
+
+SequenceProxyPullSupplier                                       [OK]
+
+
+
+ConsumerAdmin                                                   [OK]
+
+      ProxySupplier get_proxy_supplier ( )                      [OK]
+
+      ProxySupplier obtain_notification_pull_supplier ( )       [OK]
+
+      ProxySupplier obtain_notification_push_supplier ( )       [OK]
+      
+      void destroy()                                            [OK]
+
+
+SupplierAdmin                                                   [OK]
+                                                                
+      ProxyConsumer get_proxy_consumer                          [OK]
+
+      ProxyConsumer obtain_notification_pull_consumer           [OK]
+
+      ProxyConsumer obtain_notification_push_consumer           [OK]
+
+      void destroy()                                            [OK]
+
+
+EventChannel                                                    [OK]
+
+      ConsumerAdmin new_for_consumers ( )                       [OK]
+
+      SupplierAdmin new_for_suppliers ( )                       [OK]
+
+      ConsumerAdmin get_consumeradmin ( )                       [OK]
+
+      SupplierAdmin get_supplieradmin ( )                       [OK]
+
+      AdminIDSeq get_all_consumeradmins ()                      [OK]
+
+      AdminIDSeq get_all_supplieradmins ()                      [OK]
+
+
+EventChannelFactory                                             [OK]
+
+      EventChannel create_channel ( )                           [OK]
+
+      ChannelIDSeq get_all_channels()                           [OK]
+
+      EventChannel get_event_channel ( )                        [OK]
+
+
+
+
+Test Case CosNotifyFilter
+-------------------------
+
+
+ConstraintID                                                    [OK]
+
+
+ConstraintExp                                                   [OK]
+
+      CosNotification::EventTypeSeq event_types                 [OK]
+
+      string constraint_expr                                    [OK]
+      
+
+ConstraintIDSeq                                                 [OK]
+
+
+ConstraintExpSeq                                                [OK]
+
+
+ConstraintInfo
+
+      ConstraintExp constraint_expression                       [OK]
+
+      ConstraintID constraint_id                                [OK]
+
+
+ConstraintInfoSeq                                               [OK]
+
+
+MappingConstraintPair                                           [OK]
+
+      ConstraintExp constraint_expression                       [OK]
+
+      any result_to_set                                         [OK]
+
+      
+MappingConstraintPairSeq                                        [OK]
+
+
+MappingConstraintInfo                                           [OK]
+
+      ConstraintExp constraint_expression                       [OK]
+
+      ConstraintID constraint_id                                [OK]
+
+      any value                                                 [OK]
+      
+
+MappingConstraintInfoSeq                                        [OK]
+
+
+CallbackID                                                      [OK]
+
+
+CallbackIDSeq                                                   [OK]
+
+
+UnsupportedFilterableData                                       [OK]
+
+
+InvalidGrammar                                                  [OK]
+
+
+InvalidConstraint                                               [OK]
+
+      ConstraintExp constr                                      [OK]
+
+
+ConstraintNotFound                                              [OK]
+
+
+CallbackNotFound                                                [OK]
+
+
+InvalidValue                                                    [OK]
+
+      ConstraintExp constr                                      [OK]
+
+      any value                                                 [OK]
+
+
+Filter                                                          [OK]
+
+      constraint_grammar                                        [OK]
+
+      ConstraintInfoSeq add_constraints ()                      [OK]
+
+      void modify_constraints ()                                [OK]
+
+      ConstraintInfoSeq get_constraints ()                      [OK]
+
+      ConstraintInfoSeq get_all_constraints ()                  [OK]
+
+      void remove_all_constraints ()                            [OK]
+    
+      void destroy()                                            [OK]
+
+      boolean match ( in any filterable_data )                  [OK]
+
+      boolean match_structured ( )                              [OK]
+
+      boolean match_typed ( )                                   [OK]
+
+      CallbackID attach_callback ( )                            [OK]
+
+      void detach_callback ( in CallbackID callback)            [OK]
+
+      CallbackIDSeq get_callbacks()                             [OK]
+
+
+MappingFilter                                                   [OK]
+
+      constraint_grammar                                        [OK]
+      
+      value_type                                                [OK]
+      
+      default_value                                             [OK]
+                                                                
+      MappingConstraintInfoSeq add_mapping_constraints ()       [OK]
+
+      MappingConstraintInfoSeq get_mapping_constraints ( )      [OK]
+
+      appingConstraintInfoSeq get_all_mapping_constraints()     [OK]
+
+      void remove_all_mapping_constraints()                     [OK]
+
+      void destroy()                                            [OK]
+
+      boolean match ( )                                         [OK]
+
+      boolean match_structured ( )                              [OK]
+
+      boolean match_typed ( )                                   [OK]
+
+
+FilterFactory                                                   [OK]
+
+    Filter create_filter ( )                                    [OK] 
+
+    MappingFilter create_mapping_filter ( )                     [OK]
+
+
+FilterID                                                        [OK]
+
+
+FilterIDSeq                                                     [OK]
+
+
+FilterNotFound                                                  [OK]
+
+
+FilterAdmin                                                     [OK]
+
+    FilterID add_filter ( in Filter new_filter )                [OK]
+
+    void remove_filter ( in FilterID filter )                   [OK]
+
+    Filter get_filter ( in FilterID filter )                    [OK]
+    
+    FilterIDSeq get_all_filters()                               [OK]
+    
+    void remove_all_filters()                                   [OK]
+
+
+
+Test Case CosNotifyComm
+-----------------------
+
+
+CosNotifyComm::InvalidEventType                                 [OK]
+
+NotifyPublish                                                   [OK]
+
+      void offer_change( )                                      [OK]
+
+
+NotifySubscribe                                                 [OK]
+
+      void subscription_change( )                               [OK]
+
+
+PushSupplier                                                    [OK]
+
+
+PullSupplier                                                    [OK]
+
+
+PushConsumer                                                    [OK]
+
+
+PullConsumer                                                    [OK]
+
+
+StructuredPushSupplier                                          [OK]
+
+      void disconnect_structured_push_supplier()                [OK]
+
+
+StructuredPullSupplier                                          [OK]
+
+
+StructuredPushConsumer                                          [OK]
+
+      void push_structured_event( )                             [OK]
+
+      void disconnect_structured_push_consumer()                [OK]
+
+
+StructuredPullConsumer                                          [OK]
+
+
+SequencePushSupplier                                            [OK]
+
+
+SequencePullSupplier                                            [OK]
+
+
+SequencePushConsumer                                            [OK]
+
+
+SequencePullConsumer                                            [OK]
+
+
+
+·Functional Tests
+=================
+
+
+Test Case EventService
+----------------------
+
+EventChannel::for_consumers() (x 1)                             [OK]
+EventChannel::for_suppliers() (x 1)                             [OK]
+
+ConsumerAdmin::obtain_push_supplier() (x 1)                     [OK]
+SupplierAdmin::obtain_push_consumer() (x 1)                     [OK]
+
+ProxyPushSupplier::connect_push_consumer (x 1)                  [OK]
+ProxyPushSupplier::push (x 1)                                   [OK]
+ProxyPushSupplier::disconnect_push_supplier() (x 1)             [OK]
+
+ProxyPushConsumer::connect_push_supplier (x 2)                  [OK]
+ProxyPushConsumer::push (x 1)                                   [OK]
+ProxyPushConsumer::disconnect_push_consumer() (x 1)             [OK]
+
+
+Test Case DefaultFilterConstraintLanguage
+-----------------------------------------
+
+Simple boolean values (x 2)                                     [OK]
+Simple boolean expressions (x 8)                                [OK]
+More complex boolean expressions (x 9)                          [OK]
+Simple relational expressions (x 18)                            [OK]
+More complex relational expressions (x 4)                       [OK]
+Extreme values (x 9)                                            [OK]
+Simple arithmetic expressions (x 8)                             [OK]
+in' for string expressions (x 2)                                [OK]
+
+
+Test Case TestAnyFiltering
+--------------------------
+
+Filter::constraint_grammar (x 1)                                [OK]
+Filter::get_constraints (x 2)                                   [OK]
+Filter::get_all_constraints (x 2)                               [OK]
+Filter::add_constraints (x 1)                                   [OK]
+Filter::match (x 44)                                            [OK]
+Filter::match (x 1)                                             [ERROR]
+Filter::remove_all_constraints()                                [OK]
+
+
+Test Case TestStructuredEventFiltering
+--------------------------------------
+
+Filter::constraint_grammar (x 1)                                [OK]
+Filter::get_constraints (x 2)                                   [OK]
+Filter::get_all_constraints (x 2)                               [OK]
+Filter::add_constraints (x 1)                                   [OK]
+Filter::match_structured (x 6)                                  [OK]
+Filter::match_structured (x 2)                                  [ERROR]
+Filter::remove_all_constraints()                                [OK]
+
+
+TestFilterAdmin
+---------------
+
+ConsumerAdmin::remove_filter (x 2)                              [OK]
+ConsumerAdmin::get_filter (x 2)                                 [OK]
+ConsumerAdmin::add_filter (x 1)                                 [OK]
+ConsumerAdmin::get_all_filters (x 1)                            [OK]
+ConsumerAdmin::remove_all_filters (x 1)                         [OK]
+
+SupllierAdmin::remove_filter (x 2)                              [OK]
+SupplierAdmin::get_filter (x 2)                                 [OK]
+SupplierAdmin::add_filter (x 1)                                 [OK]
+SupplierAdmin::get_all_filters (x 1)                            [OK]
+SupplierAdmin::remove_all_filters (x 1)                         [OK]
+
+ProxyPushSupplier::remove_filter (x 2)                          [OK]
+ProxyPushSupplier::get_filter (x 2)                             [OK]
+ProxyPushSupplier::add_filter (x 1)                             [OK]
+ProxyPushSupplier::get_all_filters (x 1)                        [OK]
+ProxyPushSupplier::remove_all_filters (x 1)                     [OK]
+
+ProxyPushConsumer::remove_filter (x 2)                          [OK]
+ProxyPushConsumer::get_filter (x 2)                             [OK]
+ProxyPushConsumer::add_filter (x 1)                             [OK]
+ProxyPushConsumer::get_all_filters (x 1)                        [OK]
+ProxyPushConsumer::remove_all_filters (x 1)                     [OK]
+
+
+Test Case TestChannels
+----------------------
+
+EventChannelFactory::create_channel (x 2)                       [OK]
+EventChannelFactory::get_all_channels (x 1)                     [OK]
+EventChannelFactory::get_event_channel (x 2)                    [OK]
+EventChannel::MyFactory() (x 1)                                 [OK]
+EventChannel::new_for_consumers (x 1)                           [OK]
+EventChannel::get_all_consumeradmins (x 1)                      [OK]
+EventChannel::get_consumeradmin (x 2)                           [OK]
+EventChannel::new_for_suppliers (x 1)                           [OK]
+EventChannel::get_all_supplieradmins (x 1)                      [OK]
+EventChannel::get_supplieradmin (x 2)                           [OK]
+ConsumerAdmin::obtain_notification_push_supplier (x 1)          [OK]
+ConsumerAdmin::get_proxy_supplier (x 2)                         [OK]
+ConsumerAdmin::destroy (x 1)                                    [OK]
+ConsumerAdmin::MyChannel() (x 1)                                [OK]
+ConsumerAdmin::MyOperator() (x 1)                               [OK]
+ConsumerAdmin::push_suppliers() (x 1)                           [OK]
+SupplierAdmin::obtain_notification_push_consumer (x 1)          [OK]
+SupplierAdmin::get_proxy_consumer (x 2)                         [OK]
+SupplierAdmin::destroy (x 1)                                    [OK]
+SupplierAdmin::MyChannel() (x 1)                                [OK]
+SupplierAdmin::MyOperator() (x 1)                               [OK]
+SupplierAdmin::push_consumers() (x 1)                           [OK]
+ProxySupplier::MyAdmin() (x 1)                                  [OK]
+ProxyConsumer::MyAdmin() (x 1)                                  [OK]
+
+
+Test Case TestStructuredEvents
+------------------------------
+
+EventChannel::default_consumer_admin (x 1)                      [OK]
+EventChannel::default_supplier_admin (x 1)                      [OK]
+ConsumerAdmin::obtain_notification_push_supplier (x 1)          [OK]
+SupplierAdmin::obtain_notification_push_consumer (x 1)          [OK]
+StructuredProxyPushSupplier::disconnect_structured_push_supplier (x 1)
+                                                                [OK]
+StructuredProxyPushSupplier::connect_structured_push_consumer (x 2)
+                                                                [OK]
+StructuredProxyPushConsumer::connect_structured_push_supplier (x 2)
+                                                                [OK]
+StructuredProxyPushConsumer::push_structured_event (x 1)        [OK]
+StructuredProxyPushConsumer::disconnect_structured_push_consumer (x 1)
+                                                                [OK]
+StructuredPushConsumer::disconnect_structured_push_consumer (x 1)
+                                                                [OK]
+
+Test Case TestAnyEvents
+-----------------------
+
+EventChannel::default_consumer_admin (x 1)                      [OK]
+EventChannel::default_supplier_admin (x 1)                      [OK]
+ConsumerAdmin::obtain_notification_push_supplier (x 1)          [OK]
+SupplierAdmin::obtain_notification_push_consumer (x 1)          [OK]
+ProxyPushConsumer::connect_any_push_consumer (x 2)              [OK]
+ProxyPushConsumer::push (x 1)                                   [OK]
+ProxyPushSupplier::connect_any_push_supplier (x 2)              [OK]
+
+
+Test Case QoSAdmin
+------------------
+
+OrderPolicy (x 5)                                               [OK]
+EventReliability (x 3)                                          [OK]
+ConnectionReliability (x 3)                                     [OK]
+Priority (x 3)                                                  [OK]
+StartTime (x 2)                                                 [OK]
+StopTime (x 2)                                                  [OK]
+Timeout (x 2)                                                   [OK]
+StartTimeSupported (x 3)                                        [OK]
+StopTimeSupported (x 3)                                         [OK]
+
+EventChannel::get_qos (x 1)                                     [OK]
+EventChannel::set_qos (x 1)                                     [OK]
+EventChannel::validate_qos (x 1)                                [OK]
+
+ConsumerAdmin::get_qos (x 1)                                    [OK]
+ConsumerAdmin::set_qos (x 1)                                    [OK]
+ConsumerAdmin::validate_qos (x 1)                               [OK]
+
+SupplierAdmin::get_qos (x 1)                                    [OK]
+SupplierAdmin::set_qos (x 1)                                    [OK]
+SupplierAdmin::validate_qos (x 1)                               [OK]
+
+ProxyPushSupplier::get_qos (x 1)                                [OK]
+ProxyPushSupplier::set_qos (x 1)                                [OK]
+ProxyPushSupplier::validate_qos (x 1)                           [OK]
+
+ProxyPushConsumer::get_qos (x 1)                                [OK]
+ProxyPushConsumer::set_qos (x 1)                                [OK]
+ProxyPushConsumer::validate_qos (x 1)                           [OK]
+
+
+Test Case SSLIOP EventService
+------------------------------
+
+EventChannel::for_consumers() (x 1)                             [OK]
+EventChannel::for_suppliers() (x 1)                             [OK]
+
+ConsumerAdmin::obtain_push_supplier() (x 1)                     [OK]
+SupplierAdmin::obtain_push_consumer() (x 1)                     [OK]
+
+ProxyPushSupplier::connect_push_consumer (x 1)                  [OK]
+ProxyPushSupplier::push (x 1)                                   [OK]
+ProxyPushSupplier::disconnect_push_supplier() (x 1)             [OK]
+
+ProxyPushConsumer::connect_push_supplier (x 2)                  [OK]
+ProxyPushConsumer::push (x 1)                                   [OK]
+ProxyPushConsumer::disconnect_push_consumer() (x 1)             [OK]
+
+
+Test Case SSLIOP DefaultFilterConstraintLanguage
+-------------------------------------------------
+
+Simple boolean values (x 2)                                     [OK]
+Simple boolean expressions (x 8)                                [OK]
+More complex boolean expressions (x 9)                          [OK]
+Simple relational expressions (x 18)                            [OK]
+More complex relational expressions (x 4)                       [OK]
+Extreme values (x 9)                                            [OK]
+Simple arithmetic expressions (x 8)                             [OK]
+in' for string expressions (x 2)                                [OK]
+
+
+Test Case SSLIOP TestAnyFiltering
+----------------------------------
+
+Filter::constraint_grammar (x 1)                                [OK]
+Filter::get_constraints (x 2)                                   [OK]
+Filter::get_all_constraints (x 2)                               [OK]
+Filter::add_constraints (x 1)                                   [OK]
+Filter::match (x 44)                                            [OK]
+Filter::match (x 1)                                             [ERROR]
+Filter::remove_all_constraints()                                [OK]
+
+
+Test Case SSLIOP TestStructuredEventFiltering
+---------------------------------------------
+
+Filter::constraint_grammar (x 1)                                [OK]
+Filter::get_constraints (x 2)                                   [OK]
+Filter::get_all_constraints (x 2)                               [OK]
+Filter::add_constraints (x 1)                                   [OK]
+Filter::match_structured (x 6)                                  [OK]
+Filter::match_structured (x 2)                                  [ERROR]
+Filter::remove_all_constraints()                                [OK]
+
+
+SSLIOP TestFilterAdmin
+-----------------------
+
+ConsumerAdmin::remove_filter (x 2)                              [OK]
+ConsumerAdmin::get_filter (x 2)                                 [OK]
+ConsumerAdmin::add_filter (x 1)                                 [OK]
+ConsumerAdmin::get_all_filters (x 1)                            [OK]
+ConsumerAdmin::remove_all_filters (x 1)                         [OK]
+
+SupllierAdmin::remove_filter (x 2)                              [OK]
+SupplierAdmin::get_filter (x 2)                                 [OK]
+SupplierAdmin::add_filter (x 1)                                 [OK]
+SupplierAdmin::get_all_filters (x 1)                            [OK]
+SupplierAdmin::remove_all_filters (x 1)                         [OK]
+
+ProxyPushSupplier::remove_filter (x 2)                          [OK]
+ProxyPushSupplier::get_filter (x 2)                             [OK]
+ProxyPushSupplier::add_filter (x 1)                             [OK]
+ProxyPushSupplier::get_all_filters (x 1)                        [OK]
+ProxyPushSupplier::remove_all_filters (x 1)                     [OK]
+
+ProxyPushConsumer::remove_filter (x 2)                          [OK]
+ProxyPushConsumer::get_filter (x 2)                             [OK]
+ProxyPushConsumer::add_filter (x 1)                             [OK]
+ProxyPushConsumer::get_all_filters (x 1)                        [OK]
+ProxyPushConsumer::remove_all_filters (x 1)                     [OK]
+
+
+Test Case SSLIOP TestChannels
+------------------------------
+
+EventChannelFactory::create_channel (x 2)                       [OK]
+EventChannelFactory::get_all_channels (x 1)                     [OK]
+EventChannelFactory::get_event_channel (x 2)                    [OK]
+EventChannel::MyFactory() (x 1)                                 [OK]
+EventChannel::new_for_consumers (x 1)                           [OK]
+EventChannel::get_all_consumeradmins (x 1)                      [OK]
+EventChannel::get_consumeradmin (x 2)                           [OK]
+EventChannel::new_for_suppliers (x 1)                           [OK]
+EventChannel::get_all_supplieradmins (x 1)                      [OK]
+EventChannel::get_supplieradmin (x 2)                           [OK]
+ConsumerAdmin::obtain_notification_push_supplier (x 1)          [OK]
+ConsumerAdmin::get_proxy_supplier (x 2)                         [OK]
+ConsumerAdmin::destroy (x 1)                                    [OK]
+ConsumerAdmin::MyChannel() (x 1)                                [OK]
+ConsumerAdmin::MyOperator() (x 1)                               [OK]
+ConsumerAdmin::push_suppliers() (x 1)                           [OK]
+SupplierAdmin::obtain_notification_push_consumer (x 1)          [OK]
+SupplierAdmin::get_proxy_consumer (x 2)                         [OK]
+SupplierAdmin::destroy (x 1)                                    [OK]
+SupplierAdmin::MyChannel() (x 1)                                [OK]
+SupplierAdmin::MyOperator() (x 1)                               [OK]
+SupplierAdmin::push_consumers() (x 1)                           [OK]
+ProxySupplier::MyAdmin() (x 1)                                  [OK]
+ProxyConsumer::MyAdmin() (x 1)                                  [OK]
+
+
+Test Case SSLIOP TestStructuredEvents
+-------------------------------------
+
+EventChannel::default_consumer_admin (x 1)                      [OK]
+EventChannel::default_supplier_admin (x 1)                      [OK]
+ConsumerAdmin::obtain_notification_push_supplier (x 1)          [OK]
+SupplierAdmin::obtain_notification_push_consumer (x 1)          [OK]
+StructuredProxyPushSupplier::disconnect_structured_push_supplier (x 1)
+                                                                [OK]
+StructuredProxyPushSupplier::connect_structured_push_consumer (x 2)
+                                                                [OK]
+StructuredProxyPushConsumer::connect_structured_push_supplier (x 2)
+                                                                [OK]
+StructuredProxyPushConsumer::push_structured_event (x 1)        [OK]
+StructuredProxyPushConsumer::disconnect_structured_push_consumer (x 1)
+                                                                [OK]
+StructuredPushConsumer::disconnect_structured_push_consumer (x 1)
+                                                                [OK]
+
+Test Case SSLIOP TestAnyEvents
+-------------------------------
+
+EventChannel::default_consumer_admin (x 1)                      [OK]
+EventChannel::default_supplier_admin (x 1)                      [OK]
+ConsumerAdmin::obtain_notification_push_supplier (x 1)          [OK]
+SupplierAdmin::obtain_notification_push_consumer (x 1)          [OK]
+ProxyPushConsumer::connect_any_push_consumer (x 2)              [OK]
+ProxyPushConsumer::push (x 1)                                   [OK]
+ProxyPushSupplier::connect_any_push_supplier (x 2)              [OK]
+
+
+Test Case SSLIOP QoSAdmin
+-------------------------
+
+OrderPolicy (x 5)                                               [OK]
+EventReliability (x 3)                                          [OK]
+ConnectionReliability (x 3)                                     [OK]
+Priority (x 3)                                                  [OK]
+StartTime (x 2)                                                 [OK]
+StopTime (x 2)                                                  [OK]
+Timeout (x 2)                                                   [OK]
+StartTimeSupported (x 3)                                        [OK]
+StopTimeSupported (x 3)                                         [OK]
+
+EventChannel::get_qos (x 1)                                     [OK]
+EventChannel::set_qos (x 1)                                     [OK]
+EventChannel::validate_qos (x 1)                                [OK]
+
+ConsumerAdmin::get_qos (x 1)                                    [OK]
+ConsumerAdmin::set_qos (x 1)                                    [OK]
+ConsumerAdmin::validate_qos (x 1)                               [OK]
+
+SupplierAdmin::get_qos (x 1)                                    [OK]
+SupplierAdmin::set_qos (x 1)                                    [OK]
+SupplierAdmin::validate_qos (x 1)                               [OK]
+
+ProxyPushSupplier::get_qos (x 1)                                [OK]
+ProxyPushSupplier::set_qos (x 1)                                [OK]
+ProxyPushSupplier::validate_qos (x 1)                           [OK]
+
+ProxyPushConsumer::get_qos (x 1)                                [OK]
+ProxyPushConsumer::set_qos (x 1)                                [OK]
+ProxyPushConsumer::validate_qos (x 1)                           [OK]
+
+Test Case Robustness 
+---------------------
+
+This test is composed by:
+- 2 "CosNotifyChannelAdmin::EventChannel" with default properties
+- 3 "CosNotifyChannelAdmin::ConsumerAdmin"
+- 3 "CosNotifyChannelAdmin::SupplierAdmin"
+- 2"CosNotifyChannelAdmin::ProxyPushSupplier"
+- 1 "CosNotifyChannelAdmin::StructuredProxyPushSupplier"
+- 2 "CosNotifyChannelAdmin::ProxyPushConsumer"
+- 1 "CosNotifyChannelAdmin::StructuredProxyPushConsumer"
+- 1 "CosNotifyComm::StructuredPushConsumer"
+- 1 "CosNotifyComm::PushConsumer"
+- 1 "CosNotifyComm::StructuredPushSupplier" 
+- 1 "CosNotifyComm::PushSupplier"
+
+With this scenario, 1000 any events and 1000 structured events are sent by 
+suppliers at the same time.
+The result is that"CosNotifyComm::StructuredPushConsumer" receives 1000 
+structured event and the "CosNotifyComm::PushConsumer" receive 2000 any event.
+Then it is disconnected "CosNotifyChannelAdmin::ProxyPushSupplier" and 
+"CosNotifyChannelAdmin::StructuredProxyPushSupplier" from the SupplierAdmin.
+Following it's send 1 any event and 1 structured event, but this events must 
+not be delivered to ::StructuredPushConsumer" and"CosNotifyComm::PushConsumer".
+Finally, all involved objects are properly disconnected and it destroyed.

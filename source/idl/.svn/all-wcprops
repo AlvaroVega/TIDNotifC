@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/idl
+END
+CosEventChannelAdmin.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/tidnotifc/!svn/ver/900/branches/CodeCleaning/tidnotifc/source/idl/CosEventChannelAdmin.idl
+END
+CosTypedEventComm.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/tidnotifc/!svn/ver/900/branches/CodeCleaning/tidnotifc/source/idl/CosTypedEventComm.idl
+END
+CosNotifyComm.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/tidnotifc/!svn/ver/900/branches/CodeCleaning/tidnotifc/source/idl/CosNotifyComm.idl
+END
+CosNotification.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/tidnotifc/!svn/ver/900/branches/CodeCleaning/tidnotifc/source/idl/CosNotification.idl
+END
+ServiceManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/tidnotifc/!svn/ver/900/branches/CodeCleaning/tidnotifc/source/idl/ServiceManager.idl
+END
+CosTypedEventChannelAdmin.idl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/tidnotifc/!svn/ver/900/branches/CodeCleaning/tidnotifc/source/idl/CosTypedEventChannelAdmin.idl
+END
+CosTypedNotifyComm.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/tidnotifc/!svn/ver/900/branches/CodeCleaning/tidnotifc/source/idl/CosTypedNotifyComm.idl
+END
+CosNotifyChannelAdmin.idl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/tidnotifc/!svn/ver/900/branches/CodeCleaning/tidnotifc/source/idl/CosNotifyChannelAdmin.idl
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/tidnotifc/!svn/ver/971/branches/CodeCleaning/tidnotifc/source/idl/Makefile.am
+END
+CosEventComm.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/tidnotifc/!svn/ver/900/branches/CodeCleaning/tidnotifc/source/idl/CosEventComm.idl
+END
+CosNotifyFilter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/tidnotifc/!svn/ver/900/branches/CodeCleaning/tidnotifc/source/idl/CosNotifyFilter.idl
+END
+CosTypedNotifyChannelAdmin.idl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/tidnotifc/!svn/ver/900/branches/CodeCleaning/tidnotifc/source/idl/CosTypedNotifyChannelAdmin.idl
+END
+NotificationInternals.idl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/tidnotifc/!svn/ver/900/branches/CodeCleaning/tidnotifc/source/idl/NotificationInternals.idl
+END
