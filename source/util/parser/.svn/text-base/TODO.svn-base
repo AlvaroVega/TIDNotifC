@@ -1,7 +1,0 @@
-* Sign in numeric expressions is processed by parser instead of scanner. This
-  may cause a problem in range limit values. For instance, for greatest double
-  value, we may try to invert it signs, but expected result may be overranged.
-
-    Date: April 10th 2006
-    Added by: Alvaro Polo <apoloval@gsyc.escet.urjc.es>
-    Priority: Medium
